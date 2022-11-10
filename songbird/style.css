@@ -1,1 +1,199 @@
-dd
+.html {
+  font-size: 10px;
+  font-family: Verdana, Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+.body {
+  margin: auto;
+  max-width: 1240px;
+  width: 100%;
+  height: 40%;
+  background-color: rgb(66, 62, 62);
+  /* color: rgb(255, 238, 82); */
+}
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+/*header style start*/
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+.logo {
+  width: 30%;
+}
+.logo__link {
+  display: block;
+}
+.logo__link_img {
+  max-width: 560px;
+  width: 70%;
+  height: 20%;
+}
+.start-game {
+  width: 30%;
+  justify-items: center;
+  /* background-color: #008966; */
+}
+.start-game__button {
+  width: 70%;
+  margin: auto;
+  height: 40px;
+  background-color: #008966;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3 ease-in-out;
+}
+.start-game__button:focus,
+.start-game__button:hover {
+  color: rgba(226, 240, 29, 0.8);
+  transform: scale(1.03);
+}
+.header__score {
+  width: 20%;
+}
+/*header style end*/
+/*navigation birds type style start*/
+.score__content {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+}
+.bird-type_wrapper {
+  background-color: rgba(0, 188, 140, 0.8);
+  border-radius: 5px;
+}
+
+.bird-type__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bird-type__list:last-child {
+  margin-right: 2%;
+}
+.bird-list__link {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: white;
+  font-size: 1.4rem;
+  padding: 5px 10px;
+  transition: all 0.3 ease-in-out;
+}
+.bird-list__link:hover,
+.bird-list__link:focus {
+  background-color: rgba(0, 188, 140, 1);
+  cursor: pointer;
+  color: rgba(226, 240, 29, 0.8);
+  transform: scale(1.03);
+}
+/*navigation birds type style end*/
+/*main content styles start*/
+.quiz-sample {
+  min-height: 400px;
+}
+/*main content styles end*/
+/*footer styles start*/
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.author-repo__link,
+.footer__course__link {
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.author-repo__link:hover,
+.author-repo__link:focus,
+.footer__course__link:hover,
+.footer__course__link:focus {
+  transform: scale(1.05);
+}
+.author-repo__img,
+.footer__course__img {
+  width: 80px;
+  height: 80px;
+}
+
+.footer__date_content {
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  color: rgb(37, 216, 240);
+  text-align: center;
+  padding-bottom: 10px;
+}
+/*footer styles end*/
+/*popup with rules start*/
+.rules-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(168, 200, 247, 0.6);
+}
+.rules__window {
+  position: relative;
+  background-color: rgb(37, 216, 240);
+  border-radius: 10px;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  padding: 10px;
+  color: rgb(66, 16, 60);
+}
+.rules__window_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rules-title__header {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+  margin-left: 2%;
+}
+.rules-title__close_img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.rules-title__close_img:hover,
+.rules-title__close_img:focus {
+  transform: rotate(180deg);
+}
+.rules__window_content {
+  width: 90%;
+  margin: auto;
+  padding-right: 10px;
+}
+.rules-content_start {
+  font-style: italic;
+  color: rgba(66, 8, 131, 0.9);
+}
+
+.good-luck {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  color: rgb(114, 26, 104);
+}
+.rules-popup_hidden {
+  display: none;
+}
+/*popup with rules end*/

@@ -5,21 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SongBirds</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="body">
     <header class="header">
-      <div class="logo"></div>
-      <div class="start-game"></div>
-      <div class="score"></div>
+      <div class="wrapper header__wrapper">
+        <div class="header__logo logo">
+          <a href="./index.html" class="logo__link"><img src="./assets/img/logo.png" alt="Song Birds" class="logo__link_img" /></a>
+        </div>
+        <div class="header__start start-game">
+          <button class="start-game__button">Start quiz</button>
+        </div>
+        <div class="header__score score">
+          <div class="score__content">Score: <span class="score__content_value">00</span></div>
+        </div>
+      </div>
     </header>
     <nav class="bird-type">
-      <ul class="bird-type__list">
-        <li class="bird-type__link"></li>
-        <li class="bird-type__link"></li>
-        <li class="bird-type__link"></li>
-        <li class="bird-type__link"></li>
-        <li class="bird-type__link"></li>
-      </ul>
+      <div class="wrapper bird-type_wrapper">
+        <ul class="bird-type__list bird-list">
+          <li class="bird-list__link bird-list__link_active">Воробьиные</li>
+          <li class="bird-list__link">Лесные птицы</li>
+          <li class="bird-list__link">Певчие птицы</li>
+          <li class="bird-list__link">Хищные птицы</li>
+          <li class="bird-list__link">Морские птицы</li>
+        </ul>
+      </div>
     </nav>
+    <main class="quiz-sample">
+      <div class="wrapper quiz-sample__wrapper">
+        <h1 class="quiz-sample__title">Разновидность птиц</h1>
+        <div class="quiz-sample__content">
+          <div class="quiz-sample__content_header bird-figure">
+            <div class="bird-figure__img"></div>
+            <div class="bird-figure__content">
+              <div class="bird-figure__content__name-ru"></div>
+              <div class="bird-figure__content__name-eng"></div>
+              <div class="bird-figure__content__audio audio-player">
+                <div class="audio-player__control"></div>
+                <div class="audio-player__play-status"></div>
+                <div class="audio-player__volume"></div>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-sample__content_description"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper footer-wrapper">
+        <div class="footer__author author-repo">
+          <a href="https://github.com/SergikEnergy" class="author-repo__link"
+            ><img src="./assets/img/GHlogo.png" alt="github account link" class="author-repo__img"
+          /></a>
+        </div>
+        <div class="footer__date"><span class="footer__date_content">Created in 2022 year</span></div>
+        <div class="footer__course">
+          <a href="https://rs.school/js/" class="footer__course__link"
+            ><img src="./assets/img/RS-logo.png" alt="github account link" class="footer__course__img"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <!--<div class="rules-popup">
+      <div class="rules__window">
+        <div class="rules__window_title rules-title">
+          <h3 class="rules-title__header">Правила прохождения викторины</h3>
+          <div class="rules-title__close"><img class="rules-title__close_img" src="./assets/img/close-icon.png" alt="click for close rules" /></div>
+        </div>
+        <div class="rules__window_content rules-content">
+          <p>1. На стартовой странице приложения представлены разновидности птиц. Здесь можно прослушать голоса разных птиц.</p>
+          Для этого выберите тип птицы.
+          <p>Далее на странице появится краткая информация о птицах данного вида с возможностью прослушать их голос.</p>
+          <p>2. Для начала викторины кликните по кнопке <span class="rules-content_start">"Start quiz"</span>.</p>
+          <p class="good-luck">Удачи!</p>
+        </div>
+      </div>
+    </div>-->
+    <script src="index.js" type="module"></script>
   </body>
 </html>
