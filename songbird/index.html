@@ -11,8 +11,9 @@
     <header class="header">
       <div class="wrapper header__wrapper">
         <div class="header__logo logo">
-          <a href="./index.html" class="logo__link"><img src="./assets/img/logo.png" alt="Song Birds" class="logo__link_img" /></a>
+          <a href="./index.html" class="logo__link"><img src="./assets/img/logo.png" alt="Song Birds" class="logo__link_img big-image" /><img src="./assets/img/logo-burger.png" alt="Song Birds" class="unvisible element logo__link_img-small" /></a>
         </div>
+        <div class="burger-icon"></div>
         <div class="header__start start-game">
           <button class="start-game__button">Start quiz</button>
         </div>
@@ -21,34 +22,68 @@
         </div>
       </div>
     </header>
-    <nav class="bird-type">
+    <nav class="bird-type visible-nav">
       <div class="wrapper bird-type_wrapper">
         <ul class="bird-type__list bird-list">
-          <li class="bird-list__link bird-list__link_active">Воробьиные</li>
-          <li class="bird-list__link">Лесные птицы</li>
-          <li class="bird-list__link">Певчие птицы</li>
-          <li class="bird-list__link">Хищные птицы</li>
-          <li class="bird-list__link">Морские птицы</li>
+          <li class="bird-list__link bird-list__link_active" type-bird="train">Пробный</li>
+          <li class="bird-list__link" type-bird="sparrow">Воробьиные</li>
+          <li class="bird-list__link" type-bird="wild-birds">Лесные птицы</li>
+          <li class="bird-list__link" type-bird="vocal-birds">Певчие птицы</li>
+          <li class="bird-list__link" type-bird="predator-birds">Хищные птицы</li>
+          <li class="bird-list__link" type-bird="sea-birds">Морские птицы</li>
         </ul>
       </div>
     </nav>
+    <div class="burger-menu show-on-click">
+      <div class="burger-menu__header">Выберите тип птиц</div>
+      <div class="burger-menu_close"><img src="./assets/img/close-icon.png" alt="close menu burger" class="burger-menu_close-img"></div>
+      <ul class="burger-menu__list">
+        <li class="burger-menu__link burger-menu__link_active" type-bird="train">Пробный</li>
+        <li class="burger-menu__link" type-bird="sparrow">Воробьиные</li>
+        <li class="burger-menu__link" type-bird="wild-birds">Лесные птицы</li>
+        <li class="burger-menu__link" type-bird="vocal-birds">Певчие птицы</li>
+        <li class="burger-menu__link" type-bird="predator-birds">Хищные птицы</li>
+        <li class="burger-menu__link" type-bird="sea-birds">Морские птицы</li>
+      </ul>
+    </div>
     <main class="quiz-sample">
       <div class="wrapper quiz-sample__wrapper">
-        <h1 class="quiz-sample__title">Разновидность птиц</h1>
+        <h1 class="quiz-sample__title">В данном блоке будет отражен выбранный подвид птиц</h1>
         <div class="quiz-sample__content">
           <div class="quiz-sample__content_header bird-figure">
-            <div class="bird-figure__img"></div>
+            <div class="bird-figure__img"><img src="./assets/img/BG-bird.jpg" alt="some bird image" class="bird-figure__img_sample"/></div>
             <div class="bird-figure__content">
-              <div class="bird-figure__content__name-ru"></div>
-              <div class="bird-figure__content__name-eng"></div>
-              <div class="bird-figure__content__audio audio-player">
+              <div class="bird-figure__content__name-ru">Имя птицы на русском</div>
+              <div class="bird-figure__content__name-eng">Name bird in english</div>
+              <audio controls class="bird-figure__content__audio audio-player">
+                <source src="https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3" type="audio/mpeg" />
                 <div class="audio-player__control"></div>
                 <div class="audio-player__play-status"></div>
                 <div class="audio-player__volume"></div>
+              </audio>
+              <div class="bird-figure__content__audio audio-player">
+                <div class="audio-player__control">
+                  <button class="audio-player__control_icon play-pause">
+                    <span class="play-pause_icon"><img src="./assets/img/play-icon.png" alt="play audio icon" class="audio-control__icons play-icon">
+                      <img src="./assets/img/pause-icon.png" alt="play audio icon" class="audio-control__icons pause-icon hidden-icon"></span> 
+                  </button>
+                </div>
+                <div class="audio-player__play-status status-bar">
+                  <div class="audio-player__play-status_current"></div>
+                  <div class="status-bar__duration current-time">00:00</div>  
+                  <div class="status-bar__duration duration-time">00:00</div>  
+                </div>
+                <div class="audio-player__control_volume">
+                  <span class="audio-player__control_icon volume-icon"><img src="./assets/img/volume-icon-on.png" alt="volume value" class="audio-control__icons volume-icon_on"><img src="./assets/img/volume-icon-off.png" alt="volume off" class="audio-control__icons volume-icon_off hidden-icon">
+                  </span>
+                  <input type="range" class="audio-player__volume" min="0" max="100" value="40" step="10" name="volume-level"></input>
+                </div>
               </div>
             </div>
           </div>
-          <div class="quiz-sample__content_description"></div>
+          <div class="quiz-sample__content_description">
+            В данном блоке будет отображаться краткая информация о выбранном виде птиц.
+          </div>
         </div>
       </div>
     </main>
@@ -67,7 +102,7 @@
         </div>
       </div>
     </footer>
-    <!--<div class="rules-popup">
+    <div class="rules-popup">
       <div class="rules__window">
         <div class="rules__window_title rules-title">
           <h3 class="rules-title__header">Правила прохождения викторины</h3>
@@ -81,7 +116,7 @@
           <p class="good-luck">Удачи!</p>
         </div>
       </div>
-    </div>-->
+    </div>
     <script src="index.js" type="module"></script>
   </body>
 </html>

@@ -1,4 +1,6 @@
 import birdsData from "./assets/scripts/data/birds.js";
+import createSample from "./assets/scripts/components/createSample.js";
+import createPlayer from "./assets/scripts/components/createPlayer.js";
 
 // console.log(birdsData[0]);
 const buttonStartQuiz = document.querySelector(".start-game__button");
@@ -18,4 +20,19 @@ function closeRules() {
     if (elem.target === popupRules) popupRules.classList.add("rules-popup_hidden");
   });
 }
-//closeRules();
+
+closeRules();
+//select type birds
+const birdList = document.querySelector(".bird-list");
+const birdTypes = document.querySelectorAll(".bird-list__link");
+let selectedTypeBirds = "";
+birdList.addEventListener("click", (birdClick) => {
+  birdTypes.forEach((bird) => {
+    if (birdClick.target === bird) {
+      selectedTypeBirds = bird.getAttribute("type-bird").replace("-birds", "");
+      console.log(selectedTypeBirds);
+      createSample(selectedTypeBirds);
+    }
+  });
+});
+await createPlayer();
