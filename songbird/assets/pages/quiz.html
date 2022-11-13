@@ -4,7 +4,136 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SongBird-quiz</title>
+    <title>Quiz page</title>
+    <link rel="stylesheet" href="./../styles/quiz.style.css" />
   </head>
-  <body></body>
+  <body class="body">
+    <header class="header">
+      <div class="wrapper header__wrapper">
+        <div class="header__logo logo">
+          <a href="./index.html" class="logo__link"
+            ><img src="../img/logo.png" alt="Song Birds" class="logo__link_img big-image" /><img
+              src="../img/logo-burger.png"
+              alt="Song Birds"
+              class="unvisible element logo__link_img-small"
+          /></a>
+        </div>
+        <div class="burger-icon"></div>
+        <div class="header__start return-start">
+          <button class="return-start__button button-green">Return</button>
+        </div>
+        <div class="header__score score">
+          <div class="score__content">Score: <span class="score__content_value">00</span></div>
+        </div>
+      </div>
+    </header>
+    <nav class="bird-type visible-nav">
+      <div class="wrapper bird-type_wrapper">
+        <ul class="bird-type__list bird-list">
+          <li class="bird-list__link bird-list__link_active" type-bird="train">Пробный</li>
+          <li class="bird-list__link" type-bird="sparrow">Воробьиные</li>
+          <li class="bird-list__link" type-bird="wild-birds">Лесные птицы</li>
+          <li class="bird-list__link" type-bird="vocal-birds">Певчие птицы</li>
+          <li class="bird-list__link" type-bird="predator-birds">Хищные птицы</li>
+          <li class="bird-list__link" type-bird="sea-birds">Морские птицы</li>
+        </ul>
+      </div>
+    </nav>
+    <div class="burger-menu show-on-click">
+      <div class="burger-menu__header">Выберите тип птиц</div>
+      <div class="burger-menu_close"><img src="../img/close-icon.png" alt="close menu burger" class="burger-menu_close-img" /></div>
+      <ul class="burger-menu__list">
+        <li class="burger-menu__link burger-menu__link_active" type-bird="train">Пробный</li>
+        <li class="burger-menu__link" type-bird="sparrow">Воробьиные</li>
+        <li class="burger-menu__link" type-bird="wild-birds">Лесные птицы</li>
+        <li class="burger-menu__link" type-bird="vocal-birds">Певчие птицы</li>
+        <li class="burger-menu__link" type-bird="predator-birds">Хищные птицы</li>
+        <li class="burger-menu__link" type-bird="sea-birds">Морские птицы</li>
+      </ul>
+    </div>
+    <main class="quiz">
+      <div class="wrapper quiz__wrapper">
+        <h1 class="quiz__title">Подвид птиц</h1>
+        <div class="quiz__content">
+          <div class="quiz__content__question question">
+            <div class="question__img"><img src="../img/BG-bird.jpg" alt="unknown bird" class="question__img_bg" /></div>
+            <div class="question__info">
+              <div class="question__answer">Some name bird</div>
+              <div class="question__player">
+                <audio controls class="question__player__audio audio-player">
+                  <source src="https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3" type="audio/mpeg" />
+                  <div class="audio-player__control"></div>
+                  <div class="audio-player__play-status"></div>
+                  <div class="audio-player__volume"></div>
+                </audio>
+              </div>
+            </div>
+          </div>
+          <div class="quiz__content__box quiz-box">
+            <div class="quiz-box__variants answers-list">
+              <div class="answers-list__item list__radio">
+                <input id="bird1" type="radio" class="list__radio_input" name="variant1" value="select1" />
+                <label for="bird1" class="list__radio_label">Variant 1</label>
+              </div>
+              <div class="answers-list__item list__radio">
+                <input id="bird2" type="radio" class="list__radio_input" name="variant2" value="select2" />
+                <label for="bird2" class="list__radio_label">Variant 2</label>
+              </div>
+              <div class="answers-list__item list__radio">
+                <input id="bird3" type="radio" class="list__radio_input" name="variant3" value="select3" />
+                <label for="bird3" class="list__radio_label">Variant 3</label>
+              </div>
+              <div class="answers-list__item list__radio">
+                <input id="bird4" type="radio" class="list__radio_input" name="variant4" value="select4" />
+                <label for="bird4" class="list__radio_label">Variant 4</label>
+              </div>
+              <div class="answers-list__item list__radio">
+                <input id="bird5" type="radio" class="list__radio_input" name="variant5" value="select5" />
+                <label for="bird5" class="list__radio_label">Variant 5</label>
+              </div>
+              <div class="answers-list__item list__radio">
+                <input id="bird6" type="radio" class="list__radio_input" name="variant6" value="select" />
+                <label for="bird6" class="list__radio_label">Variant 6</label>
+              </div>
+            </div>
+            <div class="quiz-box__info bird-info">
+              <div class="bird-info__picture"><img src="../img/BG-bird.jpg" alt="Some bird" class="bird-info__picture_img" /></div>
+              <div class="bird-info__box answer_info">
+                <p class="answer-info__name name_ru">Name RU</p>
+                <p class="answer-info__name name_en">Name EN</p>
+                <div class="answer-info__player player-container">
+                  <audio controls class="answer-imfo__player__audio audio-player">
+                    <source src="https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3" type="audio/mpeg" />
+                    <div class="audio-player__control"></div>
+                    <div class="audio-player__play-status"></div>
+                    <div class="audio-player__volume"></div>
+                  </audio>
+                </div>
+              </div>
+              <div class="bird-info__description">Decsription</div>
+            </div>
+          </div>
+          <div class="next__question">
+            <button class="next__question_button button-green">Next level</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper footer-wrapper">
+        <div class="footer__author author-repo">
+          <a href="https://github.com/SergikEnergy" class="author-repo__link"
+            ><img src="../img/GHlogo.png" alt="github account link" class="author-repo__img"
+          /></a>
+        </div>
+        <div class="footer__date"><span class="footer__date_content">Created in 2022 year</span></div>
+        <div class="footer__course">
+          <a href="https://rs.school/js/" class="footer__course__link"
+            ><img src="./../img/RS-logo.png" alt="github account link" class="footer__course__img"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="./../scripts/quiz.js" type="module"></script>
+  </body>
 </html>
