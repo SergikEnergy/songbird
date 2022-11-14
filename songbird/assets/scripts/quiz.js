@@ -1,6 +1,7 @@
 import birdsData from "../scripts/data/birds.js";
 import createSample from "../scripts/components/createSample.js";
 import createPlayer from "../scripts/components/createPlayer.js";
+import burgerHandler from "../scripts/components/burgerHandler.js";
 
 // console.log(birdsData[0]);
 const buttonGoStart = document.querySelector(".return-start__button");
@@ -22,5 +23,5 @@ birdList.addEventListener("click", (birdClick) => {
     }
   });
 });
-
+burgerHandler();
 // await createPlayer();

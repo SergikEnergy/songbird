@@ -323,7 +323,7 @@ html {
 }
 /*footer styles end*/
 /*popup with rules start*/
-.rules-popup {
+.popup {
   position: absolute;
   top: 0;
   left: 0;
@@ -368,7 +368,8 @@ html {
   margin: auto;
   padding-right: 10px;
 }
-.rules-content_start {
+.rules-content_start,
+.rules-content_next {
   font-style: italic;
   color: rgba(66, 8, 131, 0.9);
 }
@@ -379,18 +380,22 @@ html {
   line-height: 1.6rem;
   color: rgb(114, 26, 104);
 }
-.rules-popup_hidden {
-  display: none;
+
+.popup_hidden,
+.rules_hidden,
+.unvisible-element,
+.show-on-click {
+  transition: all 0.3s easy;
+  transform: translateY(-500%);
+  overflow: hidden;
 }
-.unvisible-element {
-  display: none;
-}
+
 /*popup with rules end*/
 /*burger menu styles start*/
 .burger-icon {
   display: none;
   position: relative;
-  left: -15%;
+  left: -10%;
   width: 30px;
   height: 5px;
   background-color: #008966;
@@ -420,7 +425,7 @@ html {
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  top: 0;
+  top: 10%;
   padding: 10px;
 }
 .burger-menu__header {
@@ -546,6 +551,10 @@ html {
   .visible-nav {
     display: none;
   }
+  .logo {
+    width: 10%;
+    margin-right: 15%;
+}
   .author-repo__img,
   .footer__course__img {
     width: 50px;

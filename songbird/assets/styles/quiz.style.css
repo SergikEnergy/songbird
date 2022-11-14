@@ -323,7 +323,8 @@ html {
   height: 35px;
   margin-right: 2%;
 }
-.hidden-icon {
+.hidden-icon,
+.hidden-info {
   display: none;
 }
 .audio-player__control_volume {
@@ -441,11 +442,25 @@ html {
   padding-bottom: 10px;
 }
 /*footer styles end*/
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(168, 200, 247, 0.6);
+}
+.popup_hidden,
+.show-on-click {
+  transition: all 0.3s easy;
+  transform: translateY(-500%);
+  overflow: hidden;
+}
 /*burger menu styles start*/
 .burger-icon {
   display: none;
   position: relative;
-  left: -15%;
+  left: -10%;
   width: 30px;
   height: 5px;
   background-color: #008966;
@@ -475,7 +490,7 @@ html {
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  top: 0;
+  top: 10%;
   padding: 10px;
 }
 .burger-menu__header {
@@ -528,9 +543,6 @@ html {
   position: absolute;
   right: 13px;
   top: 8px;
-}
-.show-on-click {
-  display: none;
 }
 
 /*burger menu styles end*/
@@ -599,7 +611,6 @@ html {
   }
 }
 @media screen and (max-width: 720px) {
-  .unvisible-element,
   .logo__link_img-small,
   .burger-icon {
     display: block;
@@ -607,6 +618,10 @@ html {
   .big-image,
   .visible-nav {
     display: none;
+  }
+  .logo {
+    width: 15%;
+    margin-right: 15%;
   }
   .author-repo__img,
   .footer__course__img {

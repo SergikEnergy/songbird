@@ -11,7 +11,12 @@
     <header class="header">
       <div class="wrapper header__wrapper">
         <div class="header__logo logo">
-          <a href="./index.html" class="logo__link"><img src="./assets/img/logo.png" alt="Song Birds" class="logo__link_img big-image" /><img src="./assets/img/logo-burger.png" alt="Song Birds" class="unvisible element logo__link_img-small" /></a>
+          <a href="./index.html" class="logo__link"
+            ><img src="./assets/img/logo.png" alt="Song Birds" class="logo__link_img big-image" /><img
+              src="./assets/img/logo-burger.png"
+              alt="Song Birds"
+              class="unvisible element logo__link_img-small"
+          /></a>
         </div>
         <div class="burger-icon"></div>
         <div class="header__start start-game">
@@ -34,24 +39,12 @@
         </ul>
       </div>
     </nav>
-    <div class="burger-menu show-on-click">
-      <div class="burger-menu__header">Выберите тип птиц</div>
-      <div class="burger-menu_close"><img src="./assets/img/close-icon.png" alt="close menu burger" class="burger-menu_close-img"></div>
-      <ul class="burger-menu__list">
-        <li class="burger-menu__link burger-menu__link_active" type-bird="train">Пробный</li>
-        <li class="burger-menu__link" type-bird="sparrow">Воробьиные</li>
-        <li class="burger-menu__link" type-bird="wild-birds">Лесные птицы</li>
-        <li class="burger-menu__link" type-bird="vocal-birds">Певчие птицы</li>
-        <li class="burger-menu__link" type-bird="predator-birds">Хищные птицы</li>
-        <li class="burger-menu__link" type-bird="sea-birds">Морские птицы</li>
-      </ul>
-    </div>
     <main class="quiz-sample">
       <div class="wrapper quiz-sample__wrapper">
         <h1 class="quiz-sample__title">В данном блоке будет отражен выбранный подвид птиц</h1>
         <div class="quiz-sample__content">
           <div class="quiz-sample__content_header bird-figure">
-            <div class="bird-figure__img"><img src="./assets/img/BG-bird.jpg" alt="some bird image" class="bird-figure__img_sample"/></div>
+            <div class="bird-figure__img"><img src="./assets/img/BG-bird.jpg" alt="some bird image" class="bird-figure__img_sample" /></div>
             <div class="bird-figure__content">
               <div class="bird-figure__content__name-ru">Имя птицы на русском</div>
               <div class="bird-figure__content__name-eng">Name bird in english</div>
@@ -61,7 +54,7 @@
                 <div class="audio-player__play-status"></div>
                 <div class="audio-player__volume"></div>
               </audio>
-              <div class="bird-figure__content__audio audio-player">
+              <!-- <div class="bird-figure__content__audio audio-player">
                 <div class="audio-player__control">
                   <button class="audio-player__control_icon play-pause">
                     <span class="play-pause_icon"><img src="./assets/img/play-icon.png" alt="play audio icon" class="audio-control__icons play-icon">
@@ -78,12 +71,10 @@
                   </span>
                   <input type="range" class="audio-player__volume" min="0" max="100" value="40" step="10" name="volume-level"></input>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
-          <div class="quiz-sample__content_description">
-            В данном блоке будет отображаться краткая информация о выбранном виде птиц.
-          </div>
+          <div class="quiz-sample__content_description">В данном блоке будет отображаться краткая информация о выбранном виде птиц.</div>
         </div>
       </div>
     </main>
@@ -102,7 +93,19 @@
         </div>
       </div>
     </footer>
-    <div class="rules-popup">
+    <div class="popup">
+      <div class="burger-menu show-on-click">
+        <div class="burger-menu__header">Выберите тип птиц</div>
+        <div class="burger-menu_close"><img src="./assets/img/close-icon.png" alt="close menu burger" class="burger-menu_close-img" /></div>
+        <ul class="burger-menu__list">
+          <li class="burger-menu__link burger-menu__link_active" type-bird="train">Пробный</li>
+          <li class="burger-menu__link" type-bird="sparrow">Воробьиные</li>
+          <li class="burger-menu__link" type-bird="wild-birds">Лесные птицы</li>
+          <li class="burger-menu__link" type-bird="vocal-birds">Певчие птицы</li>
+          <li class="burger-menu__link" type-bird="predator-birds">Хищные птицы</li>
+          <li class="burger-menu__link" type-bird="sea-birds">Морские птицы</li>
+        </ul>
+      </div>
       <div class="rules__window">
         <div class="rules__window_title rules-title">
           <h3 class="rules-title__header">Правила прохождения викторины</h3>
@@ -110,9 +113,10 @@
         </div>
         <div class="rules__window_content rules-content">
           <p>1. На стартовой странице приложения представлены разновидности птиц. Здесь можно прослушать голоса разных птиц.</p>
-          Для этого выберите тип птицы.
-          <p>Далее на странице появится краткая информация о птицах данного вида с возможностью прослушать их голос.</p>
-          <p>2. Для начала викторины кликните по кнопке <span class="rules-content_start">"Start quiz"</span>.</p>
+          Для этого выберите вид птиц.
+          <p>Далее на странице появится краткая информация о птице данного вида с возможностью прослушать ее голос.</p>
+          <p>2. При нажатии на кнопку <span class="rules-content_next">Next</span> осуществляется переход к следующей птице из выбранного подвида</p>
+          <p>3. Для начала викторины выберите тип птиц и кликните по кнопке <span class="rules-content_start">"Start quiz"</span>.</p>
           <p class="good-luck">Удачи!</p>
         </div>
       </div>
