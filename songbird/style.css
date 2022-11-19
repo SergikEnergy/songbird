@@ -51,8 +51,10 @@ html {
 }
 .start-game__button {
   width: 70%;
+}
+.button-green {
   margin: auto;
-  height: 40px;
+  min-height: 40px;
   background-color: #008966;
   border: none;
   border-radius: 15px;
@@ -62,8 +64,8 @@ html {
   cursor: pointer;
   transition: all 0.3 ease-in-out;
 }
-.start-game__button:focus,
-.start-game__button:hover {
+.button-green:focus,
+.button-green:hover {
   color: rgba(226, 240, 29, 0.8);
   transform: scale(1.03);
 }
@@ -106,6 +108,11 @@ html {
   padding: 5px 10px;
   transition: all 0.3 ease-in-out;
 }
+.bird-list__link_active{
+  color: rgb(233, 103, 103);
+  background-color: rgba(0, 188, 140, 1);
+}
+
 .bird-list__link:hover,
 .bird-list__link:focus {
   background-color: rgba(0, 188, 140, 1);
@@ -182,8 +189,24 @@ html {
 .bird-figure__content__audio {
   justify-items: flex-end;
 }
+.quiz-sample__next {
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.quiz-sample__next_button {
+  padding: 10px 25px;
+  width: 100%;
+}
+.button_disabled {
+  color: black;
+  background-color: gray;
+  cursor: none;
+}
+
 
 /*audioplayer styles start*/
+/*
 .audio-player {
   display: flex;
   align-items: center;
@@ -283,8 +306,8 @@ html {
   -webkit-appearance: none;
   margin-top: -5px;
 }
-
-/*audioplayer styles end*/
+*/
+/*audioplayer styles end*/   
 
 /*main content styles end*/
 /*footer styles start*/
@@ -512,7 +535,7 @@ html {
   html {
     font-size: 9px;
   }
-  .start-game__button {
+  .button-green {
     font-size: 2.2rem;
     line-height: 2.2rem;
   }
@@ -619,12 +642,13 @@ html {
   .audio-player {
     width: 100%;
   }
+  
 }
 @media screen and (max-width: 400px) {
   .burger-icon {
     left: 70%;
   }
-  .start-game__button {
+  .button-green {
     font-size: 1.8rem;
     line-height: 1.8rem;
   }
