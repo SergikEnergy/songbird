@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your result</title>
+    <link rel="stylesheet" href="./../styles/result.style.css" />
+  </head>
+  <body class="body">
+    <header class="header">
+      <div class="wrapper header__wrapper">
+        <div class="header__logo logo">
+          <a href="./index.html" class="logo__link"
+            ><img src="../img/logo.png" alt="Song Birds" class="logo__link_img big-image" /><img
+              src="../img/logo-burger.png"
+              alt="Song Birds"
+              class="unvisible element logo__link_img-small"
+          /></a>
+        </div>
+        <div class="header__start return-start">
+          <button class="return-start__button button-green">Return Quiz</button>
+        </div>
+      </div>
+    </header>
+    <main class="result-content">
+      <div class="wrapper result-content__wrapper">
+        <h1 class="result-content__title">Результаты викторины</h1>
+        <div class="result-content__gratitude">Спасибо за участие в викторине!</div>
+        <div class="result-content__description">
+          Вы набрали <span class="result-game number">00</span> из <span class="number">30</span> возможных баллов!
+        </div>
+        <div class="image_win"><img src="../img/congratulations.png" class="image_win__picture" alt="Win image" /></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper footer-wrapper">
+        <div class="footer__author author-repo">
+          <a href="https://github.com/SergikEnergy" class="author-repo__link"
+            ><img src="../img/GHlogo.png" alt="github account link" class="author-repo__img"
+          /></a>
+        </div>
+        <div class="footer__date"><span class="footer__date_content">Created in 2022 year</span></div>
+        <div class="footer__course">
+          <a href="https://rs.school/js/" class="footer__course__link"
+            ><img src="./../img/RS-logo.png" alt="github account link" class="footer__course__img"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="./../scripts/result.js" type="module"></script>
+  </body>
+</html>

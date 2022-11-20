@@ -32,7 +32,13 @@ export default function createQuiz(selectType) {
   }
   //set disabled style for next button
   let nextBirdButton = document.querySelector(".next__question_button");
-  if (!nextBirdButton.classList.contains("button_disabled")) nextBirdButton.classList.add("button_disabled");
+  let isAnswered = true;
+  const scoreShow = document.querySelector(".score__content_value");
+  let score = 5;
+  let previousScore = 0;
+  let resultGame = 0;
+  // if (!nextBirdButton.classList.contains("button_disabled")) nextBirdButton.classList.add("button_disabled");
+
   // get random array of birds
   function getRandomBird() {
     let randomArray = [];
@@ -49,10 +55,24 @@ export default function createQuiz(selectType) {
   const questionName = document.querySelector(".question__answer");
   const questionImage = document.querySelector(".question__img_bg");
 
+  const infoImage = document.querySelector(".bird-info__picture_img");
+  const infoNameRu = document.querySelector(".name_ru");
+  const infoNameEng = document.querySelector(".name_en");
+  const defaultInfo = document.querySelector(".default-description");
+  const showDescription = document.querySelector(".bird-info__box");
+
   createBlockQuestion();
   function createBlockQuestion(item = 0) {
+    //apply default value for quiz
     questionImage.src = "../img/BG-bird.jpg";
     questionName.innerHTML = "* * * * * * *";
+    infoImage.src = "../img/BG-bird.jpg";
+    showDescription.classList.add("hidden-info");
+    defaultInfo.innerHTML = `Выберите вариант ответа. При выборе варианта ответа в данном блоке появится краткая информация о выбранной птице, а также
+    аудиоплеер, где можно послушать её голос.`;
+
+    //disabled next Button
+    if (!nextBirdButton.classList.contains("button_disabled")) nextBirdButton.classList.add("button_disabled");
 
     const questionPlayer = document.querySelector(".question__player");
     let audioQuestion = document.createElement("audio");
@@ -93,6 +113,7 @@ export default function createQuiz(selectType) {
     const answersBox = document.querySelector(".quiz-box__variants");
     const radioButtons = document.querySelectorAll(".list__radio_input");
     const variantsList = document.querySelectorAll(".list__radio_label");
+
     //delete styles radiobutton if exist
     radioButtons.forEach((itemRadio) => {
       if (itemRadio.classList.contains("wrong_answer") || itemRadio.classList.contains("right_answer")) {
@@ -123,17 +144,17 @@ export default function createQuiz(selectType) {
           // console.log(birds[currentIndex]);
 
           //create answer info
-          const infoImage = document.querySelector(".bird-info__picture_img");
+          // const infoImage = document.querySelector(".bird-info__picture_img");
           infoImage.src = birds[currentIndex].image;
-          const infoNameRu = document.querySelector(".name_ru");
+          // const infoNameRu = document.querySelector(".name_ru");
           infoNameRu.innerHTML = birds[currentIndex].name;
-          const infoNameEng = document.querySelector(".name_en");
+          // const infoNameEng = document.querySelector(".name_en");
           infoNameEng.innerHTML = birds[currentIndex].species;
 
           //replace default text and show hidden info
-          let defaultInfo = document.querySelector(".default-description");
+          // let defaultInfo = document.querySelector(".default-description");
           defaultInfo.innerHTML = birds[currentIndex].description;
-          let showDescription = document.querySelector(".bird-info__box");
+          // let showDescription = document.querySelector(".bird-info__box");
           showDescription.classList.remove("hidden-info");
           //create player
           const infoPlayerBox = document.querySelector(".answer-info__player");
@@ -151,14 +172,19 @@ export default function createQuiz(selectType) {
           if (birdName === rightAnswer) {
             elem.classList.add("right_answer");
             playRight();
+            previousScore = Number(scoreShow.innerHTML);
+            scoreShow.innerHTML = `${score + previousScore}`;
             audioTask.pause();
             answersBox.removeEventListener("click", createAnswerDescription);
             questionName.innerHTML = rightAnswer;
             questionImage.src = rightImgSrc;
             nextBirdButton.classList.remove("button_disabled");
+            if (isAnswered) nextBirdQuiz();
+            isAnswered = false;
           } else {
             elem.classList.add("wrong_answer");
             playWrong();
+            score--;
           }
         }
       });
@@ -169,7 +195,6 @@ export default function createQuiz(selectType) {
 
   // nextBirdButton.classList.remove("button_disabled");
 
-  nextBirdQuiz();
   function nextBirdQuiz(startClick = 0) {
     let countClick = startClick;
 
@@ -180,11 +205,17 @@ export default function createQuiz(selectType) {
         createVariants();
         answerElementShow();
         countClick++;
+        score = 5;
+        // console.log(countClick, index.length);
       } else {
         nextBirdButton.classList.remove("button_disabled");
         nextBirdButton.removeEventListener("click", click);
+        resultGame = Number(scoreShow.innerHTML);
+        //safe result in local storage
+        localStorage.setItem("resultQuiz", resultGame);
+        //transfer to result page
+        window.location.href = "./result.html";
       }
-      console.log(countClick);
     }
   }
 }
