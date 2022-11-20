@@ -1,27 +1,18 @@
 import birdsData from "../scripts/data/birds.js";
-import createSample from "../scripts/components/createSample.js";
-import createPlayer from "../scripts/components/createPlayer.js";
-import burgerHandler from "../scripts/components/burgerHandler.js";
+import burgerHandlerQuiz from "../scripts/components/burgerHandlerQuiz.js";
+import getTypeBirdQuiz from "../scripts/components/getTypeBirdQuiz.js";
 
-// console.log(birdsData[0]);
 const buttonGoStart = document.querySelector(".return-start__button");
 //transfer to start page
 buttonGoStart.addEventListener("click", () => {
   window.location.href = "../../index.html";
 });
+console.log("Приложение немного изменено, не в соответствии с демо. Викторина играется");
+console.log(
+  "только в одном подвиде птиц - чтобы лучше их запоминать. В итоге при нажатии NextLevel мы остаемся в том же подвиде, и после того, как прошли всех птиц, мы выводим результат на странице с результатами. При выборе блока ПРОБНЫЙ счет за ответы также начисляется, просто нет конкретного выбранного подвида"
+);
 
 //select type birds
-const birdList = document.querySelector(".bird-list");
-const birdTypes = document.querySelectorAll(".bird-list__link");
-let selectedTypeBirds = "";
-birdList.addEventListener("click", (birdClick) => {
-  birdTypes.forEach((bird) => {
-    if (birdClick.target === bird) {
-      selectedTypeBirds = bird.getAttribute("type-bird").replace("-birds", "");
-      console.log(selectedTypeBirds);
-      createSample(selectedTypeBirds);
-    }
-  });
-});
-burgerHandler();
-// await createPlayer();
+
+burgerHandlerQuiz();
+getTypeBirdQuiz();
