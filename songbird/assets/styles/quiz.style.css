@@ -107,15 +107,15 @@ html {
   padding: 5px 10px;
   transition: all 0.3 ease-in-out;
 }
-.bird-list__link:hover,
+/* .bird-list__link:hover,
 .bird-list__link:focus {
   background-color: rgba(0, 188, 140, 1);
   cursor: pointer;
   color: rgba(226, 240, 29, 0.8);
   transform: scale(1.03);
-}
+} */
 .bird-list__link_active {
-  color: rgb(233, 103, 103);
+  color: rgba(226, 240, 29, 0.8);
   background-color: rgba(0, 188, 140, 1);
 }
 /*navigation birds type style end*/
@@ -450,7 +450,7 @@ html {
   padding-bottom: 10px;
 }
 /*footer styles end*/
-.popup {
+/* .popup {
   position: absolute;
   top: 0;
   left: 0;
@@ -463,9 +463,9 @@ html {
   transition: all 0.3s easy;
   transform: translateY(-500%);
   overflow: hidden;
-}
-/*burger menu styles start*/
-.burger-icon {
+} */
+/*burger menu styles start
+ .burger-icon {
   display: none;
   position: relative;
   left: -10%;
@@ -553,7 +553,7 @@ html {
   top: 8px;
 }
 
-/*burger menu styles end*/
+burger menu styles end*/
 
 @media screen and (max-width: 1200px) {
   .bird-info {
@@ -602,12 +602,13 @@ html {
     line-height: 3rem;
   }
   .bird-list__link {
-    font-size: 2.2rem;
-    line-height: 2.5rem;
-    padding: 5px;
+    font-size: 2.7rem;
+    line-height: 3rem;
+    padding: 10px;
   }
-  .quiz-box {
+  .bird-type__list {
     flex-wrap: wrap;
+    justify-content: space-evenly;
   }
   .bird-info {
     width: 97%;
@@ -623,9 +624,11 @@ html {
   .burger-icon {
     display: block;
   }
-  .big-image,
-  .visible-nav {
+  .big-image {
     display: none;
+  }
+  .bird-type_wrapper {
+    flex-wrap: wrap;
   }
   .logo {
     width: 15%;
