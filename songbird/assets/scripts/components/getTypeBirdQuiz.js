@@ -1,6 +1,6 @@
 import createQuiz from "../components/createQuiz.js";
 
-export default function getTypeBird() {
+export default function getTypeBirdQuiz() {
   const birdList = document.querySelector(".bird-list");
   const birdTypes = document.querySelectorAll(".bird-list__link");
   let selectedTypeBirds = "";
